@@ -1,9 +1,10 @@
 <template>
   <section>
     <ul>
-      <li v-for="(day, index) in days" :key="day" class="shadow">
-        {{ day }}
-        <span class="moveBtn" type="button" @click="routeDay">
+      <li v-for="(dayList, index) in dayLists" :key="index" class="shadow" @click="routeDay">
+        {{ dayList.day }}
+        <span class="remainedTag">{{ dayList.remainedItems }}</span>
+        <span class="moveBtn" type="button">
           <i class="fa fa-arrow-right" aria-hidden="true"></i>
         </span>
       </li>
@@ -12,22 +13,25 @@
 </template>
 
 <script>
-const days = [
-  '2018.01.18',
-  '2018.01.17',
-  '2018.01.6',
+const dayLists = [
+  { day: '2018.01.18', remainedItems: 3},
+  { day: '2018.01.17', remainedItems: 1},
+  { day: '2018.01.6', remainedItems: 4}
 ]
 
 export default {
   data() {
     return {
-      days: days
+     dayLists: dayLists
     }
   },
   methods: {
     routeDay() {
       this.$router.push('day');
     }
+  },
+  computed: {
+
   }
 }
 </script>
@@ -48,6 +52,16 @@ export default {
     padding: 0 0.9rem;
     background: white;
     border-radius: 5px;
+  }
+  .remainedTag {
+    padding: 0 7px;
+    border-radius: 4px;
+    border-color: transparent;
+    background-color:#FFED78;
+    margin: 0.8rem 0.3rem;
+    line-height: 1.8rem;
+    color: #FEFFEA;
+    font-size: 0.9rem;
   }
   .checkBtn {
     line-height: 45px;

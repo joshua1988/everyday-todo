@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header></Header>
     <transition name="slide-fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -7,12 +8,17 @@
 </template>
 
 <script>
+import Header from './components/common/Header.vue'
+
 export default {
   name: 'app',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components: {
+    Header
   }
 }
 </script>
@@ -49,8 +55,7 @@ button {
 .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */
 {
-  transform: translateX(10px);
+  transform: translateX(45%);
   opacity: 0;
 }
-
 </style>
