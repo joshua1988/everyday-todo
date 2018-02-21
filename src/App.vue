@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="root-el">
     <Header></Header>
     <transition name="slide-fade" mode="out-in">
       <router-view></router-view>
@@ -24,9 +24,15 @@ export default {
 </script>
 
 <style>
-body {
+html, body {
   text-align: center;
   background-color: #F6F6F8;
+  height: 100%;
+  min-height: 100%;
+}
+
+.root-el {
+  height: 90%;
 }
 
 input {

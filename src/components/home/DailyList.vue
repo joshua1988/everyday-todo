@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="root-el">
     <ul>
       <li v-for="(dayList, index) in dayLists" :key="index" class="shadow" @click="routeDay">
         {{ dayList.day }}
@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style scoped>
+  /* newly added */ 
+
+  /* old */
   ul {
     list-style-type: none;
     padding-left: 0px;

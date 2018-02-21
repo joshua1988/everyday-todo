@@ -5,7 +5,8 @@
         <i class="checkBtn fa fa-check" aria-hidden="true"></i>
         {{ todoItem }}
         <span class="removeBtn" type="button" @click="removeTodo(todoItem, index)">
-          <i class="fa fa-trash-o" aria-hidden="true"></i>
+          <i class="far fa-trash-alt" aria-hidden="true"></i>
+          <!-- <i class=""></i> -->
         </span>
       </li>
     </ul>
@@ -47,11 +48,12 @@ export default {
     border-radius: 5px;
   }
   .checkBtn {
-    line-height: 45px;
+    line-height: 46px;
     color: #62acde;
     margin-right: 5px;
   }
   .removeBtn {
+    line-height: 50px;
     margin-left: auto;
     color: #de4343;
   }
